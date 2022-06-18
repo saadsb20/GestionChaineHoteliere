@@ -8,40 +8,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UCAPP.Data;
+using System.IO;
 
 namespace UCAPP.UC
-{
+{ 
+     
     public partial class ucRoom : UserControl
     {
-        Reservation reservation = new Reservation();
+        Main main = new Main();
         public int Num { get; set; }
-       
+        public string Telephone { get; set; }
+        public int Id_Chambre { get; set; }
+        public int Id_Hotel { get; set; }
+        public int Id_Categorie { get; set; }
+
+
         public ucRoom()
         {
             InitializeComponent();
-
         }
 
         private void ucRoom_Load(object sender, EventArgs e)
         {
-            lbNum.Text = Num.ToString();
-            this.BackColor = reservation.GetStatus(Num);
-       
+            this.TelephoneLabel.Text = Telephone;
+            main.SelectCategory(Id_Categorie);
+            this.CategoryLabel.Text = Id_Categorie.ToString();
+            this.NumeroLabel.Text = Num.ToString();
+            
         }
 
-        private void nettoyerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ucRoom_Load_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Chambre Num :"+Num);
+            this.TelephoneLabel.Text = Telephone;
+            this.CategoryLabel.Text = main.SelectCategory(Id_Categorie).Description;
+            this.NumeroLabel.Text = Num.ToString();
         }
-
-        private void réserverToolStripMenuItem_Click(object sender, EventArgs e)
+        public void btnReserver_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Red;
-        }
-
-        private void libérerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Yellow;
+            Reserver reserver = new Reserver(this.Id_Chambre);
+            reserver.Visible = true;
         }
     }
 }
+

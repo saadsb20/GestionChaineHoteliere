@@ -28,80 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lbNum = new System.Windows.Forms.Label();
-            this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.réserverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.libérerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nettoyerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu.SuspendLayout();
+            this.btnReserver = new System.Windows.Forms.Button();
+            this.CategoryLabel = new System.Windows.Forms.Label();
+            this.TelephoneLabel = new System.Windows.Forms.Label();
+            this.NumeroLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lbNum
+            // btnReserver
             // 
-            this.lbNum.AutoSize = true;
-            this.lbNum.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNum.ForeColor = System.Drawing.Color.Blue;
-            this.lbNum.Location = new System.Drawing.Point(5, 2);
-            this.lbNum.Name = "lbNum";
-            this.lbNum.Size = new System.Drawing.Size(36, 38);
-            this.lbNum.TabIndex = 0;
-            this.lbNum.Text = "1";
+            this.btnReserver.Location = new System.Drawing.Point(616, 62);
+            this.btnReserver.Name = "btnReserver";
+            this.btnReserver.Size = new System.Drawing.Size(122, 47);
+            this.btnReserver.TabIndex = 0;
+            this.btnReserver.Text = "Réserver";
+            this.btnReserver.UseVisualStyleBackColor = true;
+            this.btnReserver.Click += new System.EventHandler(this.btnReserver_Click);
+
             // 
-            // menu
+            // CategoryLabel
             // 
-            this.menu.ImageScalingSize = new System.Drawing.Size(28, 28);
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.réserverToolStripMenuItem,
-            this.libérerToolStripMenuItem,
-            this.nettoyerToolStripMenuItem});
-            this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(271, 150);
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryLabel.Location = new System.Drawing.Point(28, 62);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(135, 33);
+            this.CategoryLabel.TabIndex = 1;
+            this.CategoryLabel.Text = "Category";
             // 
-            // réserverToolStripMenuItem
+            // TelephoneLabel
             // 
-            this.réserverToolStripMenuItem.Name = "réserverToolStripMenuItem";
-            this.réserverToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.réserverToolStripMenuItem.Text = "Réserver";
-            this.réserverToolStripMenuItem.Click += new System.EventHandler(this.réserverToolStripMenuItem_Click);
+            this.TelephoneLabel.AutoSize = true;
+            this.TelephoneLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelephoneLabel.Location = new System.Drawing.Point(29, 115);
+            this.TelephoneLabel.Name = "TelephoneLabel";
+            this.TelephoneLabel.Size = new System.Drawing.Size(129, 28);
+            this.TelephoneLabel.TabIndex = 2;
+            this.TelephoneLabel.Text = "telephone";
             // 
-            // libérerToolStripMenuItem
+            // NumeroLabel
             // 
-            this.libérerToolStripMenuItem.Name = "libérerToolStripMenuItem";
-            this.libérerToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.libérerToolStripMenuItem.Text = "Libérer";
-            this.libérerToolStripMenuItem.Click += new System.EventHandler(this.libérerToolStripMenuItem_Click);
+            this.NumeroLabel.AutoSize = true;
+            this.NumeroLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumeroLabel.Location = new System.Drawing.Point(187, 20);
+            this.NumeroLabel.Name = "NumeroLabel";
+            this.NumeroLabel.Size = new System.Drawing.Size(76, 23);
+            this.NumeroLabel.TabIndex = 3;
+            this.NumeroLabel.Text = "Numero";
             // 
-            // nettoyerToolStripMenuItem
+            // label1
             // 
-            this.nettoyerToolStripMenuItem.Name = "nettoyerToolStripMenuItem";
-            this.nettoyerToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.nettoyerToolStripMenuItem.Text = "Info";
-            this.nettoyerToolStripMenuItem.Click += new System.EventHandler(this.nettoyerToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 28);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Chambre : ";
             // 
             // ucRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ContextMenuStrip = this.menu;
-            this.Controls.Add(this.lbNum);
+            this.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NumeroLabel);
+            this.Controls.Add(this.TelephoneLabel);
+            this.Controls.Add(this.CategoryLabel);
+            this.Controls.Add(this.btnReserver);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "ucRoom";
-            this.Size = new System.Drawing.Size(247, 88);
-            this.Load += new System.EventHandler(this.ucRoom_Load);
-            this.menu.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(775, 180);
+            this.Load += new System.EventHandler(this.ucRoom_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private System.Windows.Forms.Button btnReserver;
+        private System.Windows.Forms.Label CategoryLabel;
+        private System.Windows.Forms.Label TelephoneLabel;
+        private System.Windows.Forms.Label NumeroLabel;
+        private System.Windows.Forms.Label label1;
+
         #endregion
 
-        private System.Windows.Forms.Label lbNum;
+        /*private System.Windows.Forms.Label lbNum;
         private System.Windows.Forms.ContextMenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem réserverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem libérerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nettoyerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nettoyerToolStripMenuItem;*/
     }
 }
